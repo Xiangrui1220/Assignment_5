@@ -102,11 +102,11 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      var chosenCategoryShortName = chooseRandomCategory (categories);
+      var chosenCategoryShortName =  chooseRandomCategory(categories).short_name;
 
-      chosenCategoryShortName= insertProperty(chosenCategoryShortName,"{{randomCategoryShortName}}",randomCategoryShortName)
-      var homeHtmlToInsertIntoMainPage = buildAndShowHomeHTML(homeHtml);
-        insertHTML("#main-content",homeHtmlToInsertIntoMainPage);
+      chosenCategoryShortName= "'" + chosenCategoryShortName +"'";
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName",chosenCategoryShortName)
+        insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
 
 
 
